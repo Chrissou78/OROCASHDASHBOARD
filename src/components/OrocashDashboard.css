@@ -1,0 +1,697 @@
+/* OrocashDashboard.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #8b5cf6;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --dark-bg: #0f172a;
+  --card-bg: #1e293b;
+  --border-color: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f36 100%);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.dashboard-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Header */
+.dashboard-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1em;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.auto-refresh-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+.auto-refresh-toggle input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.refresh-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.last-update {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95em;
+}
+
+/* Contract Info */
+.contract-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.contract-address code {
+  background: rgba(99, 102, 241, 0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  color: #a5f3fc;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.2);
+}
+
+.metric-card.gradient-blue {
+  border-left: 5px solid #3b82f6;
+}
+
+.metric-card.gradient-purple {
+  border-left: 5px solid #a855f7;
+}
+
+.metric-card.gradient-green {
+  border-left: 5px solid #10b981;
+}
+
+.metric-card.gradient-red {
+  border-left: 5px solid #ef4444;
+}
+
+.metric-icon {
+  font-size: 2.5em;
+  min-width: 60px;
+  text-align: center;
+}
+
+.metric-content {
+  flex: 1;
+}
+
+.metric-title {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-unit {
+  font-size: 0.65em;
+  color: var(--text-secondary);
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* Config Section */
+.config-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.config-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+}
+
+.config-card h3 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.config-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(99, 102, 241, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.config-item.active {
+  border-left-color: var(--success-color);
+}
+
+.config-item.inactive {
+  border-left-color: var(--text-secondary);
+}
+
+.config-item.critical {
+  border-left-color: var(--danger-color);
+}
+
+.config-item.healthy {
+  border-left-color: var(--success-color);
+}
+
+.config-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.config-value {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  font-size: 0.95em;
+  word-break: break-all;
+  max-width: 150px;
+}
+
+/* Roles Section */
+.roles-section {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.roles-section h2 {
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  color: var(--text-primary);
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.role-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.role-header h4 {
+  color: var(--text-primary);
+  font-size: 1.1em;
+}
+
+.role-count {
+  background: var(--primary-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.role-members ul {
+  list-style: none;
+}
+
+.role-members li {
+  color: var(--text-secondary);
+  font-family: "Courier New", monospace;
+  font-size: 0.85em;
+  padding: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.role-members li.more {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.no-members {
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 10px 0;
+}
+
+/* Membership Section */
+.membership-section {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.membership-section h2 {
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  color: var(--text-primary);
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.membership-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--success-color);
+}
+
+.membership-icon {
+  font-size: 2em;
+  min-width: 50px;
+  text-align: center;
+}
+
+.membership-content {
+  flex: 1;
+}
+
+.membership-title {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.membership-value {
+  color: var(--text-primary);
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.membership-unit {
+  font-size: 0.7em;
+  color: var(--text-secondary);
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+/* Transactions Section */
+.transactions-section {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.tx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tx-header h2 {
+  font-size: 1.5em;
+  color: var(--text-primary);
+}
+
+.tx-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 150px 180px;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.transaction-row:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary-color);
+}
+
+.tx-type {
+  background: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tx-hash,
+.tx-time {
+  color: var(--text-secondary);
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.tx-block {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.no-transactions {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+/* Loading State */
+.dashboard-container.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loader {
+  text-align: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(99, 102, 241, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.dashboard-container.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error-box {
+  background: var(--card-bg);
+  border: 2px solid var(--danger-color);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.error-box h2 {
+  color: var(--danger-color);
+  margin-bottom: 15px;
+}
+
+.error-box p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.retry-btn {
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .transaction-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 20px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title-section h1 {
+    font-size: 1.8em;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .config-section {
+    grid-template-columns: 1fr;
+  }
+
+  .roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tx-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .roles-section,
+  .membership-section,
+  .transactions-section,
+  .config-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  .title-section h1 {
+    font-size: 1.3em;
+  }
+
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .membership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .config-value {
+    max-width: 100px;
+    font-size: 0.8em;
+  }
+
+  .metric-card.clickable,
+  .membership-card.clickable {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .metric-card.clickable:hover,
+  .membership-card.clickable:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  }
+
+  .metric-arrow,
+  .membership-arrow {
+    font-size: 1.5em;
+    color: #6366f1;
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .metric-card.clickable:hover .metric-arrow,
+  .membership-card.clickable:hover .membership-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+}
