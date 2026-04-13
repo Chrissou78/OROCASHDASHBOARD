@@ -184,7 +184,7 @@ function HoldersPage({ contract, provider, tokenData, onBack }) {
 
   useEffect(() => {
     fetchHolders();
-  }, []);
+  }, [fetchHolders]);
 
   // Pagination
   const startIndex = (currentPage - 1) * pageSize;

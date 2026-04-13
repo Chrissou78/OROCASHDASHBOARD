@@ -170,7 +170,7 @@ function MembershipsPage({ contract, provider, tokenData, membershipData, onBack
 
   useEffect(() => {
     fetchMemberships();
-  }, []);
+  }, [fetchMemberships]);
 
   // Pagination
   const startIndex = (currentPage - 1) * pageSize;
