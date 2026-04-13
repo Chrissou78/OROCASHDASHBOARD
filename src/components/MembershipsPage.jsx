@@ -1,6 +1,5 @@
 // MembershipsPage.jsx
 import React, { useState, useEffect, useCallback } from 'react';
-import { ethers } from 'ethers';
 import CONFIG from '../config';
 import './MembershipsPage.css';
 
